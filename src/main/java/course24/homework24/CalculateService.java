@@ -12,21 +12,16 @@ public class CalculateService implements CalculateServiceInterface {
 
 	public String calculate(String oper, double num1, double num2) {
 		double result = 0.0;
-		String sign = "";
-		if (oper.equals("plus")) {
+		if (oper.equals(" + ")) {
 			result = num1 + num2;
-			sign = " + ";
-		} else if (oper.equals("minus")) {
+		} else if (oper.equals(" - ")) {
 			result = num1 - num2;
-			sign = " - ";
-		} else if (oper.equals("multiply")) {
+		} else if (oper.equals(" * ")) {
 			result = num1 * num2;
-			sign = " * ";
-		} else if (oper.equals("division")) {
+		} else if (oper.equals(" / ")) {
 			result = num1 / num2;
-			sign = " / ";
 		}
-		return num1 + sign + num2 + " = " + result;
+		return num1 + oper + num2 + " = " + result;
 	}
 
 	public Boolean checkBeforeDivision(double num) {

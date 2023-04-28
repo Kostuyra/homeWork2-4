@@ -21,17 +21,17 @@ class CalculateController {
 
 	@GetMapping(path = "/plus")
 	String plusCalculator(@RequestParam() double num1, @RequestParam() double num2) {
-		return calculateService.calculate("plus", num1, num2);
+		return calculateService.calculate(" + ", num1, num2);
 	}
 
 	@GetMapping(path = "/minus")
 	String minusCalculator(@RequestParam() double num1, @RequestParam() double num2) {
-		return calculateService.calculate("minus", num1, num2);
+		return calculateService.calculate(" - ", num1, num2);
 	}
 
 	@GetMapping(path = "/multiply")
 	String multiplyCalculator(@RequestParam() double num1, @RequestParam double num2) {
-		return calculateService.calculate("multiply", num1, num2);
+		return calculateService.calculate(" * ", num1, num2);
 	}
 
 	@GetMapping(path = "/division")
@@ -39,7 +39,7 @@ class CalculateController {
 		if (calculateService.checkBeforeDivision(num2)){
 			return "На ноль делить нельзя!";
 		}
-		return calculateService.calculate("division", num1, num2);
+		return calculateService.calculate(" / ", num1, num2);
 	}
 
 }
